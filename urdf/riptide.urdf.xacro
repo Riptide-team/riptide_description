@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<robot name="$(arg prefix)" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find riptide_description)/urdf/riptide.urdf.xacro"/>
+    <!-- Rigid body description of the base link -->
+	<link name="$(arg prefix)">
+		<visual>
+			<origin xyz="0.2 0 0" rpy="${pi/2} 0 ${pi}"/>
+			<geometry>
+				<mesh filename="package://riptide_description/meshes/riptide_body.stl" scale="0.001 0.001 0.001"/>
+			</geometry>
+		  </visual>
+	</link>
+
+	<link name="$(arg prefix)_echosounder"/>
+
+	<joint name="$(arg prefix)_echosounder" type="fixed">
+		<origin rpy="0 ${pi/2} 0" xyz="0.28 0 -0.05"/>
+		<parent link="$(arg prefix)"/>
+		<child link="$(arg prefix)_echosounder"/>
+	</joint>
+
+	<link name="$(arg prefix)_thruster">
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://riptide_description/meshes/propeller.dae" scale="1.5 1.5 1.5"/>
+			</geometry>
+		</visual>
+	</link>
+
+	<joint name="$(arg prefix)_thruster" type="continuous">
+		<axis xyz="1 0 0"/>
+		<origin rpy="0 0 0" xyz="-0.51 0 0"/>
+		<parent link="$(arg prefix)"/>
+		<child link="$(arg prefix)_thruster"/>
+	</joint>
+
+	<xacro:include filename="$(find riptide_description)/urdf/riptide_fin.urdf.xacro"/>
+
+	<xacro:riptide_fin name="d" orientation="0"/>
+	<xacro:riptide_fin name="p" orientation="1"/>
+	<xacro:riptide_fin name="s" orientation="2"/>
+
+    <!-- ROS2 control -->
+    <ros2_control name="riptide_imu" type="sensor">
+        <hardware>
+            <plugin>riptide_hardware/SpartonAHRSM1Hardware</plugin>
+            <param name="port">/dev/ttyUSB0</param>
+            <param name="baud_rate">115200</param>
+        </hardware>
+        <sensor name="imu">
+            <state_interface name="linear_acceleration.x"/>
+            <state_interface name="linear_acceleration.y"/>
+            <state_interface name="linear_acceleration.z"/>
+            <state_interface name="angular_velocity.x"/>
+            <state_interface name="angular_velocity.y"/>
+            <state_interface name="angular_velocity.z"/>
+            <state_interface name="orientation.x"/>
+            <state_interface name="orientation.y"/>
+            <state_interface name="orientation.z"/>
+            <state_interface name="orientation.w"/>
+        </sensor>
+    </ros2_control>
+     
+</robot>
