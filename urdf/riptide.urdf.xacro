@@ -42,61 +42,7 @@
 	<xacro:riptide_fin name="s" orientation="2"/>
 
     <!-- ROS2 control -->
-    <ros2_control name="riptide_imu" type="sensor">
-        <hardware>
-            <plugin>riptide_hardware/SpartonAHRSM1Hardware</plugin>
-            <param name="port">/dev/ttyUSB0</param>
-            <param name="baud_rate">115200</param>
-        </hardware>
-        <sensor name="imu">
-            <state_interface name="linear_acceleration.x"/>
-            <state_interface name="linear_acceleration.y"/>
-            <state_interface name="linear_acceleration.z"/>
-            <state_interface name="angular_velocity.x"/>
-            <state_interface name="angular_velocity.y"/>
-            <state_interface name="angular_velocity.z"/>
-            <state_interface name="orientation.x"/>
-            <state_interface name="orientation.y"/>
-            <state_interface name="orientation.z"/>
-            <state_interface name="orientation.w"/>
-        </sensor>
-    </ros2_control>
-
-	<ros2_control name="riptide_actuators" type="system">
-        <hardware>
-            <plugin>riptide_hardware/ActuatorsHardware</plugin>
-            <param name="port">/dev/POLOLU</param>
-            <param name="baud_rate">115200</param>
-        </hardware>
-		<joint name="thruster">
-            <command_interface name="position">
-                <param name="min">-1</param>
-                <param name="max">1</param>
-            </command_interface>
-            <!-- <state_interface name="position"/> -->
-            <state_interface name="position"/>
-        </joint>
-        <joint name="d_fin">
-            <command_interface name="position">
-                <param name="min">"${-pi/2}"</param>
-                <param name="max">"${pi/2}"</param>
-            </command_interface>
-            <state_interface name="position"/>
-        </joint>
-        <joint name="p_fin">
-            <command_interface name="position">
-                <param name="min">"${-pi/2}"</param>
-                <param name="max">"${pi/2}"</param>
-            </command_interface>
-            <state_interface name="position"/>
-        </joint>
-        <joint name="s_fin">
-            <command_interface name="position">
-                <param name="min">"${-pi/2}"</param>
-                <param name="max">"${pi/2}"</param>
-            </command_interface>
-            <state_interface name="position"/>
-        </joint>
-    </ros2_control>
+	<xacro:include filename="riptide_imu.urdf.xacro"/>
+	<xacro:include filename="riptide_actuators.urdf.xacro"/>
      
 </robot>

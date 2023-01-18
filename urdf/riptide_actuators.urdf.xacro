@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<robot name="$(arg prefix)" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<ros2_control name="riptide_actuators" type="system">
+        <hardware>
+            <plugin>riptide_hardware/ActuatorsHardware</plugin>
+            <param name="port">/dev/POLOLU</param>
+            <param name="baud_rate">115200</param>
+        </hardware>
+		<joint name="thruster">
+            <command_interface name="position">
+                <param name="min">-1</param>
+                <param name="max">1</param>
+            </command_interface>
+            <!-- <state_interface name="position"/> -->
+            <state_interface name="position"/>
+        </joint>
+        <joint name="d_fin">
+            <command_interface name="position">
+                <param name="min">"${-pi/2}"</param>
+                <param name="max">"${pi/2}"</param>
+            </command_interface>
+            <state_interface name="position"/>
+        </joint>
+        <joint name="p_fin">
+            <command_interface name="position">
+                <param name="min">"${-pi/2}"</param>
+                <param name="max">"${pi/2}"</param>
+            </command_interface>
+            <state_interface name="position"/>
+        </joint>
+        <joint name="s_fin">
+            <command_interface name="position">
+                <param name="min">"${-pi/2}"</param>
+                <param name="max">"${pi/2}"</param>
+            </command_interface>
+            <state_interface name="position"/>
+        </joint>
+    </ros2_control>
+     
+</robot>
