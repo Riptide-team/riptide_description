@@ -4,7 +4,7 @@
     <ros2_control name="$(arg prefix)_battery_card" type="sensor">
         <hardware>
             <plugin>riptide_hardware/BatteryCardHardware</plugin>
-            <param name="port">/dev/ttyACM0</param>
+            <param name="port">/dev/ttyAMA0</param>
             <param name="baud_rate">115200</param>
         </hardware>
         <sensor name="$(arg prefix)_battery_card">
