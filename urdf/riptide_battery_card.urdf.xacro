@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <ros2_control name="riptide_battery_card" type="sensor">
+        <hardware>
+            <plugin>riptide_hardware/BatteryCardHardware</plugin>
+            <param name="port">/dev/ttyACM0</param>
+            <param name="baud_rate">115200</param>
+        </hardware>
+        <sensor name="$(arg prefix)_battery_card">
+            <state_interface name="tension"/>
+            <state_interface name="current"/>
+        </sensor>
+    </ros2_control>
+     
+</robot>
