@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-	<ros2_control name="riptide_actuators" type="system">
+	<ros2_control name="$(arg prefix)_actuators" type="system">
         <hardware>
             <plugin>riptide_hardware/ActuatorsHardware</plugin>
             <param name="port">/dev/POLOLU</param>
