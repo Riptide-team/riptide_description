@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <ros2_control name="$(arg prefix)_pressure" type="sensor">
+        <hardware>
+            <plugin>riptide_hardware/EchosounderHardware</plugin>
+            <param name="port">/dev/Echosounder</param>
+        </hardware>
+        <sensor name="$(arg prefix)_echosounder">
+            <state_interface name="distance"/>
+        </sensor>
+    </ros2_control>
+     
+</robot>
