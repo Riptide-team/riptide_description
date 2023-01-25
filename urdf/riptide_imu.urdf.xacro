@@ -4,7 +4,7 @@
     <ros2_control name="$(arg prefix)_imu" type="sensor">
         <hardware>
             <plugin>riptide_hardware/IMUHardware</plugin>
-            <param name="port">/dev/ttyUSB0</param>
+            <param name="port">/dev/IMU</param>
             <param name="baud_rate">115200</param>
         </hardware>
         <sensor name="$(arg prefix)_imu">
