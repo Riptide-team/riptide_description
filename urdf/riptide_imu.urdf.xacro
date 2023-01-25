@@ -7,7 +7,7 @@
             <param name="port">/dev/ttyUSB0</param>
             <param name="baud_rate">115200</param>
         </hardware>
-        <sensor name="imu">
+        <sensor name="$(arg prefix)_imu">
             <state_interface name="linear_acceleration.x"/>
             <state_interface name="linear_acceleration.y"/>
             <state_interface name="linear_acceleration.z"/>
