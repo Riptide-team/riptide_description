@@ -4,7 +4,7 @@
 	<ros2_control name="$(arg prefix)_actuators" type="system">
         <hardware>
             <plugin>riptide_hardware/ActuatorsHardware</plugin>
-            <param name="port">/dev/POLOLU</param>
+            <param name="port">/dev/Pololu</param>
             <param name="baud_rate">115200</param>
         </hardware>
 		<joint name="$(arg prefix)_thruster">
