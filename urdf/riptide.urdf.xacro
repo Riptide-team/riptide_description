@@ -45,7 +45,7 @@
 	<xacro:include filename="riptide_imu.urdf.xacro"/>
 	<xacro:include filename="riptide_actuators.urdf.xacro"/>
 	<xacro:include filename="riptide_pressure.urdf.xacro"/>
-	<!-- <xacro:include filename="riptide_battery_card.urdf.xacro"/> -->
-	<!-- <xacro:include filename="riptide_echosounder.urdf.xacro"/> -->
+	<xacro:include filename="riptide_battery_card.urdf.xacro"/>
+	<xacro:include filename="riptide_echosounder.urdf.xacro"/>
      
 </robot>
