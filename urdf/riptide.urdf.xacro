@@ -42,10 +42,11 @@
 	<xacro:riptide_fin name="s" orientation="2"/>
 
     <!-- ROS2 control -->
-	<xacro:include filename="riptide_imu.urdf.xacro"/>
-	<xacro:include filename="riptide_actuators.urdf.xacro"/>
-	<xacro:include filename="riptide_pressure.urdf.xacro"/>
-	<xacro:include filename="riptide_battery_card.urdf.xacro"/>
+	<!-- <xacro:include filename="riptide_imu.urdf.xacro"/> -->
+	<!-- <xacro:include filename="riptide_actuators.urdf.xacro"/> -->
+	<!-- <xacro:include filename="riptide_pressure.urdf.xacro"/> -->
+	<!-- <xacro:include filename="riptide_battery_card.urdf.xacro"/> -->
 	<!-- <xacro:include filename="riptide_echosounder.urdf.xacro"/> -->
+	<!-- <xacro:include filename="riptide_tail.urdf.xacro"/> -->
      
 </robot>
