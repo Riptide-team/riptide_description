@@ -5,7 +5,7 @@
         <hardware>
             <plugin>riptide_hardware/EchosounderHardware</plugin>
             <param name="port">/dev/Echosounder</param>
-            <param name="baud_rate">460800</param>
+            <param name="baud_rate">38400</param>
         </hardware>
         <sensor name="$(arg prefix)_echosounder">
             <state_interface name="distance"/>
