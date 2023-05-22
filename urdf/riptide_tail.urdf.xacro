@@ -44,6 +44,10 @@
             <state_interface name="ch5"/>
             <state_interface name="ch6"/>
         </sensor>
+        <sensor name="$(arg prefix)_multiplexer">
+            <state_interface name="control"/>
+            <state_interface name="remaining_time"/>
+        </sensor>
     </ros2_control>
      
 </robot>
