@@ -36,7 +36,7 @@
             </command_interface>
             <state_interface name="position"/>
         </joint>
-        <sensor name="$(arg prefix)_rc_feedback">
+        <sensor name="$(arg prefix)_rc">
             <state_interface name="ch1"/>
             <state_interface name="ch2"/>
             <state_interface name="ch3"/>
