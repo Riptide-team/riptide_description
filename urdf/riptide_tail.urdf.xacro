@@ -12,8 +12,8 @@
             <command_interface name="velocity">
                 <param name="min">-1</param>
                 <param name="max">1</param>
-                <param name="initial_value">1500</param>
             </command_interface>
+            <param name="pwn_neutral">1500</param>
             <state_interface name="velocity"/>
         </joint>
         <joint name="$(arg prefix)_d_fin">
@@ -21,8 +21,8 @@
                 <param name="min">"${-pi/4}"</param>
                 <param name="max">"${pi/4}"</param>
             </command_interface>
+            <param name="pwn_neutral">1500</param>
             <state_interface name="position">
-                <param name="neutral_pwm">1500</param>
             </state_interface>
         </joint>
         <joint name="$(arg prefix)_p_fin">
@@ -30,6 +30,7 @@
                 <param name="min">"${-pi/4}"</param>
                 <param name="max">"${pi/4}"</param>
             </command_interface>
+            <param name="pwn_neutral">1500</param>
             <state_interface name="position"/>
         </joint>
         <joint name="$(arg prefix)_s_fin">
@@ -37,6 +38,7 @@
                 <param name="min">"${-pi/4}"</param>
                 <param name="max">"${pi/4}"</param>
             </command_interface>
+            <param name="pwn_neutral">1500</param>
             <state_interface name="position"/>
         </joint>
         <sensor name="$(arg prefix)_rc">
