@@ -5,7 +5,7 @@
         <hardware>
             <plugin>riptide_hardware/TailHardware</plugin>
             <param name="port">/dev/ttyUSB0</param>
-            <param name="baud_rate">115200</param>
+            <param name="baudrate">115200</param>
             <param name="expiration_duration_ms">100</param>
         </hardware>
 		<joint name="$(arg prefix)_thruster">
