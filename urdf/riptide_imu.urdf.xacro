@@ -6,10 +6,10 @@
             <plugin>riptide_hardware/IMUHardware</plugin>
             <param name="port">/dev/IMU</param>
             <param name="baud_rate">115200</param>
-            <param name="boresight_qx">0.02223541</param>
-            <param name="boresight_qy">-0.05441578</param>
-            <param name="boresight_qz">-0.48115304</param>
-            <param name="boresight_qw">0.87466352</param>
+            <param name="boresight_qx">0.</param>
+            <param name="boresight_qy">0.</param>
+            <param name="boresight_qz">0.</param>
+            <param name="boresight_qw">1.</param>
         </hardware>
         <sensor name="$(arg prefix)_imu">
             <state_interface name="linear_acceleration.x"/>
