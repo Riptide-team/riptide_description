@@ -12,7 +12,7 @@
 			</visual>
 		</link>
 
-		<joint name="$(arg prefix)_${name}_fin" type="revolute">
+		<joint name="$(arg prefix)_${name}_joint" type="revolute">
 			<axis xyz="0 0 1"/>
 			<limit effort="1000.0" lower="${-pi/4}" upper="${pi/4}" velocity="0.5"/>
 			<origin rpy="${angle-pi/2} 0 0" xyz="-.35 ${.062*cos(angle)} ${.062*sin(angle)}"/>
