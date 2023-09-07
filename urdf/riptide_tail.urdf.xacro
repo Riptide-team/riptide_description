@@ -9,7 +9,7 @@
             <param name="expiration_duration_ms">100</param>
             <param name="threshold_fin_commands">20</param>
         </hardware>
-		<joint name="$(arg prefix)_thruster">
+		<joint name="$(arg prefix)_thruster_joint">
             <command_interface name="velocity">
                 <param name="min">-1</param>
                 <param name="max">1</param>
@@ -17,7 +17,7 @@
             <param name="pwm_neutral">1500</param>
             <state_interface name="velocity"/>
         </joint>
-        <joint name="$(arg prefix)_d_fin">
+        <joint name="$(arg prefix)_d_joint">
             <command_interface name="position">
                 <param name="min">${-pi/4}</param>
                 <param name="max">${pi/4}</param>
@@ -26,7 +26,7 @@
             <state_interface name="position">
             </state_interface>
         </joint>
-        <joint name="$(arg prefix)_p_fin">
+        <joint name="$(arg prefix)_p_joint">
             <command_interface name="position">
                 <param name="min">${-pi/4}</param>
                 <param name="max">${pi/4}</param>
@@ -34,7 +34,7 @@
             <param name="pwm_neutral">1500</param>
             <state_interface name="position"/>
         </joint>
-        <joint name="$(arg prefix)_s_fin">
+        <joint name="$(arg prefix)_s_joint">
             <command_interface name="position">
                 <param name="min">${-pi/4}</param>
                 <param name="max">${pi/4}</param>
