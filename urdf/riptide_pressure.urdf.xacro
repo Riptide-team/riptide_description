@@ -6,6 +6,7 @@
             <plugin>riptide_hardware/PressureHardware</plugin>
             <param name="port">/dev/i2c-1</param>
             <param name="calibration_pressure">101000.0</param>
+            <param name="max_pressure_rate">300000.0</param>
         </hardware>
         <sensor name="$(arg prefix)_pressure">
             <state_interface name="pressure"/>
